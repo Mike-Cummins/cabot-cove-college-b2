@@ -1,0 +1,7 @@
+<% @residents.each do |resident| %>
+<div id="resident_<%= resident.id %>">
+  <p> Name: <%= resident.name %></p>
+  <p> Age: <%= resident.age %></p>
+  <p> Occupation: <%= resident.occupation %></p>
+</div>
+<% end %>
