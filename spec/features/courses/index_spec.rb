@@ -29,5 +29,12 @@ RSpec.describe 'Courses Index' do
         expect(page).to have_content("Residents Enrolled: 1")
       end
     end
+
+    it 'displays courses in alphabetcal order' do
+      visit '/courses'
+
+      expect(@crime.name).to appear_before(@painting.name)
+      expect(@painting.name).to appear_before(@survival.name)
+    end
   end
 end

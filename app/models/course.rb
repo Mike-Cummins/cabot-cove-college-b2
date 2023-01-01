@@ -6,4 +6,8 @@ class Course < ApplicationRecord
   def enrollment_count
     residents.count
   end
+
+  def self.sort_alpha
+    order(:name)
+  end
 end

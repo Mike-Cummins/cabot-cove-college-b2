@@ -29,4 +29,12 @@ RSpec.describe Course, type: :model do
     expect(@survival.enrollment_count).to eq(2)
     expect(@painting.enrollment_count).to eq(1)
   end
+
+  it 'sorts courses alphabetically by name' do
+    @crime = Course.create!(name: 'Crime Scene 101')
+    @survival = Course.create!(name: 'Wilderness Survival')
+    @painting = Course.create!(name: 'Paint by Numbers')
+
+    expect(Course.sort_alpha).to eq([@crime, @painting, @survival])
+  end
 end
