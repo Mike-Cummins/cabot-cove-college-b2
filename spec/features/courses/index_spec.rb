@@ -21,9 +21,13 @@ RSpec.describe 'Courses Index' do
       expect(page).to have_content(@survival.name)
       expect(page).to have_content(@painting.name)
 
-      within "#course_#{@crime.id}"
+      within "#course_#{@crime.id}" do 
         expect(page).to have_content("Residents Enrolled: 2")
-      
+      end
+
+      within "#course_#{@survival.id}" do
+        expect(page).to have_content("Residents Enrolled: 1")
+      end
     end
   end
 end
