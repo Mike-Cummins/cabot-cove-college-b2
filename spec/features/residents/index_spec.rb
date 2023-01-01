@@ -40,5 +40,12 @@ RSpec.describe 'Residents Index' do
     
       expect(page).to have_content("Average Resident Age: 33.7")
     end
+
+    it 'displays the residents in alphabetical order' do
+      visit '/residents'
+
+      expect(@bob.name).to appear_before(@mat.name)
+      expect(@mat.name).to appear_before(@tim.name)
+    end
   end
 end

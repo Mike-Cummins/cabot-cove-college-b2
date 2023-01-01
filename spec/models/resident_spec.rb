@@ -24,4 +24,12 @@ RSpec.describe Resident, type: :model do
 
     expect(Resident.average_age).to eq(30) 
   end
+
+  it 'lists residents alphabetically by first name' do
+    @tim = Resident.create!(name: 'Tim', age: 34, occupation: 'Writer')
+    @mat = Resident.create!(name: 'Mat', age: 24, occupation: 'Student')
+    @bob = Resident.create!(name: 'Bob', age: 45, occupation: 'Baker')
+
+    expect(Resident.sort_alpha).to eq([@bob, @mat, @tim])
+  end
 end

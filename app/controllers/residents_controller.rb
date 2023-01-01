@@ -1,7 +1,7 @@
 class ResidentsController < ApplicationController
   
   def index
-    @residents = Resident.all
+    @residents = Resident.sort_alpha
   end
 
   def show

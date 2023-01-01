@@ -6,4 +6,8 @@ class Resident < ApplicationRecord
   def self.average_age
     average(:age).round(1)
   end
+
+  def self.sort_alpha
+    order(:name)
+  end
 end
