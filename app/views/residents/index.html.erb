@@ -1,3 +1,6 @@
+<h1>All Residents: </h1>
+<p>Average Resident Age: <%= @residents.average_age %>
+
 <% @residents.each do |resident| %>
   <div id="resident_<%= resident.id %>">
     <p> Name: <%= resident.name %></p>

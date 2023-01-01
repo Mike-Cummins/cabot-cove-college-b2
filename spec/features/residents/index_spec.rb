@@ -34,5 +34,11 @@ RSpec.describe 'Residents Index' do
         expect(page).to_not have_content(@bob.name)
       end      
     end
+
+    it 'displays the average age of all residents' do
+      visit '/residents'
+    
+      expect(page).to have_content("Average Resident Age: 33.7")
+    end
   end
 end
